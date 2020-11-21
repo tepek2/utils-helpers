@@ -16,6 +16,7 @@ module.exports = {
         semi: ['error', 'always'],
         indent: ['error', 4],
         strict: ['error', 'global'],
-        'max-len': ['error', { code: 140 }]
+        'max-len': ['error', { code: 140 }],
+        'no-extra-boolean-cast': false
     }
 };

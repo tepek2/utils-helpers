@@ -19,7 +19,7 @@ const {
     copyFile
 } = require('../src/fs-utils');
 
-describe('tests for work with fs', () => {
+describe('tests work with fs', () => {
     const path = './test/data/fs-utils.txt';
 
     describe('test readLines', () => {

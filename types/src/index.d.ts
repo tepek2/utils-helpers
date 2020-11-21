@@ -21,3 +21,35 @@ export const fs: {
     getFoldersNames: (path: string) => Promise<string[]>;
     checkENOENT: (err: Error) => void;
 };
+export const request: {
+    get: (url: string, headers: import("http").OutgoingHttpHeaders) => Promise<{
+        statusCode: number;
+        statusMessage: string;
+        headers: import("http").IncomingHttpHeaders;
+        body: string;
+    }>;
+    post: (url: string, payload: any, headers: import("http").OutgoingHttpHeaders) => Promise<{
+        statusCode: number;
+        statusMessage: string;
+        headers: import("http").IncomingHttpHeaders;
+        body: string;
+    }>;
+    put: (url: string, payload: any, headers: import("http").OutgoingHttpHeaders) => Promise<{
+        statusCode: number;
+        statusMessage: string;
+        headers: import("http").IncomingHttpHeaders;
+        body: string;
+    }>;
+    patch: (url: string, payload: any, headers: import("http").OutgoingHttpHeaders) => Promise<{
+        statusCode: number;
+        statusMessage: string;
+        headers: import("http").IncomingHttpHeaders;
+        body: string;
+    }>;
+    delete: (url: string, headers: import("http").OutgoingHttpHeaders) => Promise<{
+        statusCode: number;
+        statusMessage: string;
+        headers: import("http").IncomingHttpHeaders;
+        body: string;
+    }>;
+};
