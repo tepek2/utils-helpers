@@ -1,6 +1,6 @@
 'use strict';
 
-const request = require('../src/request-utils');
+const request = require('../src/request');
 
 describe('test request utils', () => {
     const serverPath = 'http://httpbin.org/';
@@ -8,6 +8,6 @@ describe('test request utils', () => {
         it('should do something', async () => {
             const data = await request.get(serverPath);
             expect(data.statusCode).toBe(200);
-        })
+        });
     });
 });

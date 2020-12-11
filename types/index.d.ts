@@ -1,6 +1,10 @@
 /// <reference types="node" />
 declare const _exports: {
     fs: {
+        createTempFolder: (tag?: string | undefined) => Promise<string>;
+        deleteTempFolderByTag: (tag: string) => Promise<void>;
+        getTempFolderPathByTag: (tag: string) => Promise<string>;
+        createFsStructure: (path: string, structure: any) => Promise<void>;
         readLines: (path: string) => {
             lines: import("readline").Interface;
             readStream: import("fs").ReadStream;
@@ -17,7 +21,7 @@ declare const _exports: {
         updateLine: (path: string, lineNumber: number, text: string) => Promise<void>;
         getLineCount: (path: string) => Promise<number>;
         copyFile: (sourceFilePath: string, newFilePath: string) => Promise<void>;
-        copyFolder: (sourceFolderPath: string, newFolderPath: string) => Promise<never>;
+        copyFolder: (sourceFolderPath: string, newFolderPath: string) => Promise<void>;
         getFilsesNames: (path: string) => Promise<string[]>;
         getFoldersNames: (path: string) => Promise<string[]>;
         checkENOENT: (err: Error) => void;
@@ -53,6 +57,10 @@ declare const _exports: {
             headers: import("http").IncomingHttpHeaders;
             body: string;
         }>;
+    };
+    utils: {
+        syncify: (fn: any) => Promise<() => any>;
+        randHex: (size: number) => string;
     };
 };
 export = _exports;

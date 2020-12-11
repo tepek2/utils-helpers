@@ -141,21 +141,26 @@ const createPath = (path) => {
 };
 
 /**
- * Delete folder
+ * Delete folder and all content
  *
  * @param {string} path - path to folder
  * @returns {Promise<void>}
  */
 const deleteFolder = async (path) => {
     try {
-        return await fs.promises.rmdir(path, { recursive: true });
+        const fullContent = await getFolderContent(path);
+        await Promise.all(fullContent.map((item) => {
+            if (item.isDirectory()) return deleteFolder(Path.join(path, item.name));
+            return deleteFile(Path.join(path, item.name));
+        }));
+        await fs.promises.rmdir(path);
     } catch (err) {
         checkENOENT(err);
     }
 };
 
 /**
- * Check if file exists
+ * Check if file or folder exists
  *
  * @param {string} path - path to file
  * @returns {Promise<boolean>}
@@ -279,11 +284,20 @@ const getFoldersNames = async (path) => {
 /**
  * Copy whole folder with all files and folder
  *
+ * @async
  * @param {string} sourceFolderPath - path to the source folder
  * @param {string} newFolderPath - path to new folder
+ * @returns {Promise<void>}
  */
 const copyFolder = async (sourceFolderPath, newFolderPath) => {
-    throw new Error('Not implemented!');
+    const fullContent = await getFolderContent(sourceFolderPath);
+    await createPath(newFolderPath);
+    return Promise.all(
+        fullContent.map((item) => {
+            if (item.isDirectory()) return copyFolder(Path.join(sourceFolderPath, item.name), Path.join(newFolderPath, item.name));
+            if (item.isFile()) return copyFile(Path.join(sourceFolderPath, item.name), Path.join(newFolderPath, item.name));
+        })
+    );
 };
 
 module.exports = {

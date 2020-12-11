@@ -22,9 +22,6 @@
     "jest": "^26.4.2",
     "typescript": "^4.0.3"
   },
-  "engines": {
-    "node": ">=12.19.0"
-  },
   "homepage": "",
   "keywords": [
     "nodejs",

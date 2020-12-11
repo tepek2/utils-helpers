@@ -50,14 +50,14 @@ export function appendFile(path: string, text: string): Promise<void>;
  */
 export function createPath(path: string): Promise<void>;
 /**
- * Delete folder
+ * Delete folder and all content
  *
  * @param {string} path - path to folder
  * @returns {Promise<void>}
  */
 export function deleteFolder(path: string): Promise<void>;
 /**
- * Check if file exists
+ * Check if file or folder exists
  *
  * @param {string} path - path to file
  * @returns {Promise<boolean>}
@@ -107,10 +107,12 @@ export function copyFile(sourceFilePath: string, newFilePath: string): Promise<v
 /**
  * Copy whole folder with all files and folder
  *
+ * @async
  * @param {string} sourceFolderPath - path to the source folder
  * @param {string} newFolderPath - path to new folder
+ * @returns {Promise<void>}
  */
-export function copyFolder(sourceFolderPath: string, newFolderPath: string): Promise<never>;
+export function copyFolder(sourceFolderPath: string, newFolderPath: string): Promise<void>;
 /**
  * Return list of files in the folder
  *

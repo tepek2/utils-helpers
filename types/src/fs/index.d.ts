@@ -1,5 +1,5 @@
 /// <reference types="node" />
-export const fs: {
+declare const _exports: {
     createTempFolder: (tag?: string | undefined) => Promise<string>;
     deleteTempFolderByTag: (tag: string) => Promise<void>;
     getTempFolderPathByTag: (tag: string) => Promise<string>;
@@ -25,39 +25,4 @@ export const fs: {
     getFoldersNames: (path: string) => Promise<string[]>;
     checkENOENT: (err: Error) => void;
 };
-export const request: {
-    get: (url: string, headers: import("http").OutgoingHttpHeaders) => Promise<{
-        statusCode: number;
-        statusMessage: string;
-        headers: import("http").IncomingHttpHeaders;
-        body: string;
-    }>;
-    post: (url: string, payload: any, headers: import("http").OutgoingHttpHeaders) => Promise<{
-        statusCode: number;
-        statusMessage: string;
-        headers: import("http").IncomingHttpHeaders;
-        body: string;
-    }>;
-    put: (url: string, payload: any, headers: import("http").OutgoingHttpHeaders) => Promise<{
-        statusCode: number;
-        statusMessage: string;
-        headers: import("http").IncomingHttpHeaders;
-        body: string;
-    }>;
-    patch: (url: string, payload: any, headers: import("http").OutgoingHttpHeaders) => Promise<{
-        statusCode: number;
-        statusMessage: string;
-        headers: import("http").IncomingHttpHeaders;
-        body: string;
-    }>;
-    delete: (url: string, headers: import("http").OutgoingHttpHeaders) => Promise<{
-        statusCode: number;
-        statusMessage: string;
-        headers: import("http").IncomingHttpHeaders;
-        body: string;
-    }>;
-};
-export const utils: {
-    syncify: (fn: any) => Promise<() => any>;
-    randHex: (size: number) => string;
-};
+export = _exports;
