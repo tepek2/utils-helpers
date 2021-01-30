@@ -50,7 +50,7 @@ const getLastTag = async (owner, repo) => {
 
 const release = async () => {
     const { owner, repo } = await getGitInfo();
-    const { prerelease, tag } = getTag();
+    const { tag } = getTag();
 
     const lastTag = await getLastTag(owner, repo);
 
@@ -66,7 +66,6 @@ const release = async () => {
         owner,
         repo,
         body,
-        prerelease,
         tag_name: tag
     });
 };
