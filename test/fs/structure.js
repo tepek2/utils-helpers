@@ -13,4 +13,6 @@ const structure = {
     }
 };
 
-module.exports = { structure };
+const jsonOperationData = '{"testData": "text", "testDict": {"data": "text2"}, "testData2": "text3"}';
+
+module.exports = { structure, jsonOperationData };

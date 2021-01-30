@@ -1,7 +1,7 @@
 'use strict';
 
 const Path = require('path');
-const { createFsStructure, createTempFolder, deleteTempFolderByTag, exists, readFile } = require('../../src').fs;
+const { createFsStructure, createTempFolder, deleteTempFolderByTag, exists, readFile } = require('../../src/fs');
 
 describe('test createFsStructure', () => {
     const tempFolderTag = 'structure';

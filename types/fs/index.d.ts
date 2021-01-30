@@ -1,5 +1,8 @@
 /// <reference types="node" />
 declare const _exports: {
+    updateJson: (path: string, key: any, value: any) => Promise<void>;
+    getJsonData: <T>(path: string) => Promise<T>;
+    savePrettyJson: <T_1>(path: string, data: T_1) => Promise<void>;
     createTempFolder: (tag?: string | undefined) => Promise<string>;
     deleteTempFolderByTag: (tag: string) => Promise<void>;
     getTempFolderPathByTag: (tag: string) => Promise<string>;
