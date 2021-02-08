@@ -1,6 +1,6 @@
 'use strict';
 
-const { readFile, rewriteFile } = require('./index');
+const { readFile, rewriteFile } = require('./fs-basic');
 
 const setValueByKeys = (keys, value, object) => {
     const key = keys.shift();

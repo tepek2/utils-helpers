@@ -1,9 +1,9 @@
 {
   "name": "utils-helpers",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Helpful functions for Nodejs",
-  "main": "dist/index.js",
-  "typings": ".dist/index.d.ts",
+  "main": "./dist/src/index.js",
+  "typings": "./dist/src/index.d.ts",
   "repository": "https://github.com/tepek2/utils-helpers",
   "scripts": {
     "test": "jest",

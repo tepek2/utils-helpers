@@ -46,7 +46,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var _a = require('./index'), readFile = _a.readFile, rewriteFile = _a.rewriteFile;
+var _a = require('./fs-basic'), readFile = _a.readFile, rewriteFile = _a.rewriteFile;
 var setValueByKeys = function (keys, value, object) {
     var _a, _b;
     var key = keys.shift();
@@ -108,7 +108,9 @@ var getJsonData = function (path) { return __awaiter(void 0, void 0, void 0, fun
     var rawData, data;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, readFile(path)];
+            case 0:
+                console.log(readFile);
+                return [4 /*yield*/, readFile(path)];
             case 1:
                 rawData = _a.sent();
                 data = JSON.parse(rawData);
