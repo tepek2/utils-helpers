@@ -1,6 +1,6 @@
 {
   "name": "utils-helpers",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Helpful functions for Nodejs",
   "main": "./dist/src/index.js",
   "typings": "./dist/src/index.d.ts",

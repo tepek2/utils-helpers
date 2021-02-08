@@ -108,9 +108,7 @@ var getJsonData = function (path) { return __awaiter(void 0, void 0, void 0, fun
     var rawData, data;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0:
-                console.log(readFile);
-                return [4 /*yield*/, readFile(path)];
+            case 0: return [4 /*yield*/, readFile(path)];
             case 1:
                 rawData = _a.sent();
                 data = JSON.parse(rawData);
