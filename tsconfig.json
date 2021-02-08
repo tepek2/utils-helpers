@@ -1,10 +1,9 @@
 {
     "include": [
-        "src/**/*"
+        "src/**/*.js"
     ],
     "exclude": [
         "./node_modules/**/*",
-        "./types/**/*",
         "./test/**/*"
     ],
     "compilerOptions": {
@@ -12,10 +11,10 @@
         "checkJs": false,
         "strict": true,
         "declaration": true,
-        "emitDeclarationOnly": true,
+        // "emitDeclarationOnly": true,
         "skipLibCheck": true,
         "sourceMap": true,
         "module": "CommonJS",
-        "outDir": "./types",
+        "outDir": "./dist",
     },
   }

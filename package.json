@@ -1,12 +1,13 @@
 {
   "name": "utils-helpers",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Helpful functions for Nodejs",
-  "main": "/src/index.js",
-  "typings": "./types/index.d.ts",
+  "main": "dist/src/index.js",
+  "typings": ".dist/src/index.d.ts",
+  "repository": "https://github.com/tepek2/utils-helpers",
   "scripts": {
     "test": "jest",
-    "release": "node github/release.js",
+    "release": "node scripts/release.js",
     "build": "tsc"
   },
   "author": "tepek2",
